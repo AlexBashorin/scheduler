@@ -39,5 +39,5 @@ func main() {
 	key := os.Getenv("HTTPSKEY")
 	cert := os.Getenv("HTTPSCERT")
 
-	http.ListenAndServeTLS(":8090", cert, key, mux)
+	http.ListenAndServeTLS(":443", cert, key, mux)
 }
