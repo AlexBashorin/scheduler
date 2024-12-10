@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="schedule">
+        <div class="schedule__tasktracker">
+            <div class="schedule__header">
+                <h2>Schedule of tasks</h2>
+                <hr>
+                <div class="schedule__header-navigation">
+                    <button class="btn schedule__header-prev-week" data-tooltip="Используйте стрелки клавиатуры">←</button>
+                    <div class="cur-week"></div>
+                    <button class="btn schedule__header-next-week" data-tooltip="Используйте стрелки клавиатуры">→</button>
+                </div>
+            </div>
+            <div class="schedule__task-columns">
+
+            </div>
+            <div class="schedule__dates"></div>
+            <div class="schedule__userlines"></div>
+        </div>
+        <div class="schedule__backlog">
+            <div class="schedule__login">
+                <button class="btn login">Login</button>
+            </div>
+            <h3>Backlog</h3>
+            <button class="btn open-form-new-backlog-task">Write new one</button>
+            <div class="form-new-backlog-task">
+                <label for="name-new-backlog-task">Name</label>
+                <input type="text" name="name-new-backlog-task" class="inputs form-new-backlog-task__name">
+
+                <label for="description-new-backlog-task">Description</label>
+                <input type="text" name="description-new-backlog-task" class="inputs form-new-backlog-task__descript">
+
+                <label for="start-new-backlog-task">Start</label>
+                <input name="start-new-backlog-task" type="date" class="inputs form-new-backlog-task__start">
+                
+                <label for="end-new-backlog-task">End</label>
+                <input name="end-new-backlog-task" type="date" class="inputs form-new-backlog-task__end">
+                
+                <button class="btn create-new-backlog-task">create</button>
+            </div>
+            <input type="text" class="inputs search-backlog" placeholder="Search tasks" />
+            <div class="backlog-items-container"></div>
+        </div>
+    </div>
+    <script type="module" src="./index.js"></script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f1f1f1;
+}
+
+.btn {
+    background: #000;
+    border: none;
+    color: #fff;
+    padding: 8px 20px;
+    /* border-radius: 8px; */
+    cursor: pointer;
+}
+
+.inputs {
+    width: 100%;
+    height: 30px;
+    border: none;
+}
+
+.btn:hover {
+    background: #2c2c2c;
+}
+
+.schedule__header-prev-week, .schedule__header-next-week {
+    position: relative;
+    width: 30%;
+    background: #ddd;
+    color: gray;
+}
+.schedule__header-prev-week[data-tooltip]::after, .schedule__header-next-week[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+.schedule__header-prev-week[data-tooltip]:hover::after,
+.schedule__header-prev-week[data-tooltip]:hover::before,
+.schedule__header-next-week[data-tooltip]:hover::after,
+.schedule__header-next-week[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 0 0 30px;
+}
+
+.schedule__tasktracker {
+    flex: 4;
+}
+
+.schedule__tasktracker>h2 {
+    margin: 0;
+}
+
+.schedule__header-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.schedule__task-columns {
+    display: grid;
+    grid-template-columns: 100px repeat(7, 1fr);
+    width: 100%;
+}
+.schedule__task-columns div {
+    border: 1px solid #ddd;
+}
+
+.task-column {
+    border-right: 1px solid #000;
+}
+
+.schedule__dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0 0 140px;
+}
+
+.date-item {
+    border-bottom: 2px solid #000;
+}
+
+.schedule__userlines {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.schedule__user-row {
+    border-bottom: 1px solid gray;
+    display: flex;
+    flex-direction: row;
+    min-height: 40px;
+    align-items: center;
+}
+
+.schedule__name-container {
+    border-right: 1px solid gray;
+    width: 140px;
+}
+
+.task {
+    background: rgb(229, 250, 229);
+    border: 1px solid #000;
+    position: relative;
+}
+
+.task[data-tooltip] {
+    cursor: pointer;
+}
+
+.task[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000;
+}
+
+.task[data-tooltip]:hover::after,
+.task[data-tooltip]:hover::before {
+    visibility: visible;
+    opacity: 1;
+}
+.task[data-tooltip-right]::after {
+    bottom: auto;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 10px;
+}
+
+.task[data-tooltip-right]::before {
+    border: 6px solid transparent;
+    border-right-color: rgba(0, 0, 0, 0.8);
+    bottom: auto;
+    left: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: -2px;
+}
+
+.schedule__backlog {
+    flex: 1;
+    background: #ddd;
+    padding: 0 16px;
+    margin: 0 0 0 10px;
+    min-height: 100vh;
+    height: max-content;
+}
+
+.backlog-item {
+    border-bottom: 1px solid #000;
+    margin: 8px 0 0 0;
+    cursor: grab;
+}
+
+.schedule__login {
+    text-align: end;
+    margin: 10px 0 0 0;
+}
+
+.search-backlog {
+    margin: 10px 0;
+}
+
+.form-new-backlog-task {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    display: none;
+    margin: 10px 0;
+}
+
+.auth-form {
+    position: absolute;
+    z-index: 999;
+    width: max-content;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 8px 10px;
+    gap: 8px;
+}
